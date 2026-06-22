@@ -123,7 +123,7 @@ jobs:
           echo "androidKeyPassword=${{ secrets.KEY_PASSWORD }}" >> local.properties
 
       - name: Build release
-        run: ./gradlew :magisk-loader:zipRelease :app:assembleRelease
+        run: ./gradlew :magisk-loader:zipRiruRelease :magisk-loader:zipZygiskRelease :app:assembleRelease
         env:
           GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g"
 
@@ -133,4 +133,4 @@ jobs:
           name: lsposed-release
           path: |
             app/build/outputs/apk/release/*.apk
-            magisk-loader/build/outputs/*.zip
+            magisk-loader/build/outputs/release/*.zip
