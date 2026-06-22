@@ -1,0 +1,14 @@
+# Copy this file to local.properties and fill in your values.
+# local.properties is git-ignored and should never be committed.
+
+# Android SDK path (required)
+sdk.dir=/path/to/android/sdk
+
+# NDK path (optional — Gradle resolves via ndkVersion in build.gradle.kts)
+# ndk.dir=/path/to/android/sdk/ndk/26.1.10909125
+
+# Signing config (required for release builds only)
+# androidStoreFile=/path/to/keystore.jks
+# androidStorePassword=
+# androidKeyAlias=
+# androidKeyPassword=
