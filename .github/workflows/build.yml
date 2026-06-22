@@ -112,6 +112,13 @@ jobs:
             "build-tools;34.0.0" \
             "platforms;android-34"
 
+      - name: Build libxposed local dependencies
+        run: |
+          git clone --depth 1 https://github.com/libxposed/api /tmp/libxposed-api
+          git clone --depth 1 https://github.com/libxposed/interface /tmp/libxposed-interface
+          cd /tmp/libxposed-api && ./gradlew publishToMavenLocal --no-daemon
+          cd /tmp/libxposed-interface && ./gradlew publishToMavenLocal --no-daemon
+
       - name: Set up signing keystore
         run: |
           echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > keystore.jks
